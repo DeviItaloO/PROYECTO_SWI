@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var usuario = Context.Session.GetString("UserName");
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido <span class="text-primary">@usuario.ToUpper()</span></h1>
+</div>
+<br />
+<div class="mt-4">
+    <h3>Nuestras secciones:</h3>
+    <hr />
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-users me-2"></i> Gestión de Pacientes</h5>
+                    <a href="/Pacientes/Index" class="btn btn-primary float-end">Ir a Pacientes</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-tags me-2"></i> Gestión de Tipos de Pacientes</h5>
+                    <a href="/TiposPacientes/Index" class="btn btn-primary float-end">Ir a Tipos de Pacientes</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-stethoscope me-2"></i> Atenciones Médicas</h5>
+                    <a href="/Atencions/Index" class="btn btn-primary float-end">Ir a Atenciones</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-pills me-2"></i> Medicinas</h5>
+                    <a href="/Medicinas/Index" class="btn btn-primary float-end">Ir a Medicinas</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-shopping-cart me-2"></i> Solicitud de Medicinas</h5>
+                    <a href="/SolicitudMedicinas/Index" class="btn btn-primary float-end">Ir a Solicitudes</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-history me-2"></i> Historial de Pacientes</h5>
+                    <a href="/HistorialPacientes/Index" class="btn btn-primary float-end">Ir a Historial</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-chart-line me-2"></i> Generar Reportes</h5>
+                    <a href="/Reportes/GenerarReporte" class="btn btn-primary float-end">Ir a Reportes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+</div>
+
+

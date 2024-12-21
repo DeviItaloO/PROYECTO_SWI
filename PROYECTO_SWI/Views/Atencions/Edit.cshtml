@@ -1,0 +1,50 @@
+﻿@model PROYECTO_SWI.Models.Atencion
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-4">
+    <h2 class="text-primary text-center">Editar Atención</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form asp-action="Edit" class="card p-4 shadow-sm" method="post">
+                
+                <input type="hidden" asp-for="IdAtencion" />
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="IdPaciente" class="font-weight-bold">Paciente</label>
+                    <select asp-for="IdPaciente" class="form-control" asp-items="ViewBag.IdPaciente"></select>
+                    <span asp-validation-for="IdPaciente" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Fecha" class="font-weight-bold">Fecha</label>
+                    <input asp-for="Fecha" class="form-control" />
+                    <span asp-validation-for="Fecha" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Hora" class="font-weight-bold">Hora</label>
+                    <input asp-for="Hora" class="form-control" />
+                    <span asp-validation-for="Hora" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Detalles" class="font-weight-bold">Detalles</label>
+                    <input asp-for="Detalles" class="form-control" />
+                    <span asp-validation-for="Detalles" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary btn-lg shadow-sm">Actualizar Atención</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-3 text-center">
+        <a asp-action="Index" class="btn btn-outline-secondary btn-lg shadow-sm">Volver a la lista</a>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

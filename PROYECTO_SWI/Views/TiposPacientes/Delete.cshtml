@@ -1,0 +1,37 @@
+﻿@model PROYECTO_SWI.Models.TiposPaciente
+
+@{
+    ViewData["Title"] = "Eliminar Tipo de Paciente";
+}
+
+<div class="container mt-4">
+    <h2 class="text-danger text-center">Eliminar Tipo de Paciente</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card border-danger mb-3">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="card-title">¿Estás seguro de eliminar este tipo de paciente?</h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text">Esta acción no se puede deshacer.</h5>
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Tipo)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Tipo)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="IdTipo" />
+            <button type="submit" class="btn btn-danger btn-lg shadow-sm">Eliminar</button>
+        </form>
+        <a asp-action="Index" class="btn btn-outline-secondary btn-lg shadow-sm mt-2">Volver a la lista</a>
+    ´</div>
+</div>

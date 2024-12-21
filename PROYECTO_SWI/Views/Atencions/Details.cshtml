@@ -1,0 +1,41 @@
+﻿@model PROYECTO_SWI.Models.Atencion
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container mt-4">
+    <h2 class="text-primary text-center">Detalles de la Atención</h2>
+    <hr />
+    <div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card border-primary mb-3">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="card-title">Información de la Atencióm</h4>
+                    </div>
+                    <div class="card-body">
+                        <dl class="row">
+                            <dt class="col-sm-4 font-weight-bold">@Html.DisplayNameFor(model => model.Paciente)</dt>
+                            <dd class="col-sm-8">@Html.DisplayFor(model => model.Paciente.Apellido)</dd>
+
+                            <dt class="col-sm-4 font-weight-bold">@Html.DisplayNameFor(model => model.Fecha)</dt>
+                            <dd class="col-sm-8">@Html.DisplayFor(model => model.Fecha)</dd>
+
+                            <dt class="col-sm-4 font-weight-bold">@Html.DisplayNameFor(model => model.Hora)</dt>
+                            <dd class="col-sm-8">@Html.DisplayFor(model => model.Hora)</dd>
+
+                            <dt class="col-sm-4 font-weight-bold">@Html.DisplayNameFor(model => model.Detalles)</dt>
+                            <dd class="col-sm-8">@Html.DisplayFor(model => model.Detalles)</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.IdAtencion" class="btn btn-warning btn-lg shadow-sm">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary btn-lg shadow-sm">Volver a la lista</a>
+    </div>
+</div>
+
+

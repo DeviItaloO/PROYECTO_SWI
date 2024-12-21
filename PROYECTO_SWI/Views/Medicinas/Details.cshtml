@@ -1,0 +1,36 @@
+﻿@model PROYECTO_SWI.Models.Medicina
+
+@{
+    ViewData["Title"] = "Detalle de la Medicina";
+}
+
+<div class="container mt-4">
+    <h2 class="text-primary text-center">Detalles de la Medicina</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card border-primary mb-3">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="card-title">Información de la Medicina</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4 font-weight-bold">Nombre de la Medicina:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.NombreMedicina)</dd>
+
+                        <dt class="col-sm-4 font-weight-bold">Stock:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Stock)</dd>
+
+                        <dt class="col-sm-4 font-weight-bold">Descripción:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Descripcion)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.IdMedicina" class="btn btn-warning btn-lg shadow-sm">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary btn-lg shadow-sm">Volver a la lista</a>
+    </div>
+</div>
+

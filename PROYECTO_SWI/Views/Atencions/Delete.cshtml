@@ -1,0 +1,55 @@
+﻿@model PROYECTO_SWI.Models.Atencion
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container mt-4">
+    <h2 class="text-danger text-center">Eliminar Atención</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card border-danger mb-3">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="card-title">¿Estás seguro de eliminar ésta Atención?</h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text">Esta acción no se puede deshacer.</h5>
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Paciente)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Paciente.Apellido)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Fecha)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Fecha)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Hora)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Hora)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Detalles)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Detalles)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="IdAtencion" />
+            <button type="submit" class="btn btn-danger btn-lg shadow-sm">Eliminar</button>
+        </form>
+        <a asp-action="Index" class="btn btn-outline-secondary btn-lg shadow-sm mt-2">Volver a la lista</a>
+    </div>
+</div>

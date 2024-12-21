@@ -1,0 +1,36 @@
+﻿@model PROYECTO_SWI.Models.Reporte
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-4">
+    <h2 class="text-primary text-center">Crear Reporte</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form asp-action="Create" class="card p-4 shadow-sm">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <div class="form-group mb-3">
+                    <label asp-for="IdAtencion" class="control-label">Atención</label>
+                    <select asp-for="IdAtencion" class ="form-control" asp-items="ViewBag.IdAtencion"></select>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="DetallesAdicionales" class="control-label">Detalles Adicionales</label>
+                    <input asp-for="DetallesAdicionales" class="form-control" />
+                    <span asp-validation-for="DetallesAdicionales" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-success btn-lg shadow-sm">Crear Reporte</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-3 text-center">
+        <a asp-action="Index" class="btn btn-outline-secondary btn-lg shadow-sm">Volver a la lista</a>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

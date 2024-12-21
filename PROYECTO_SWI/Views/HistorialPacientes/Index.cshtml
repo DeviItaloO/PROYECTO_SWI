@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PROYECTO_SWI.Models.HistorialPaciente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="text-primary">Historial del Paciente</h1>
+        <a asp-action="Create" class="btn btn-success">Crear Nuevo</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.DniPaciente)</th>
+                    <th>@Html.DisplayNameFor(model => model.NumeroAtenciones)</th>
+                    <th>@Html.DisplayNameFor(model => model.UltimaAtencion)</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.DniPaciente)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NumeroAtenciones)</td>
+                    <td>@Html.DisplayFor(modelItem => item.UltimaAtencion)</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a asp-action="Edit" asp-route-id="@item.IdHistorial" class="btn btn-sm btn-warning me-2">Editar</a>
+                            <a asp-action="Details" asp-route-id="@item.IdHistorial" class="btn btn-sm btn-info me-2">Detalles</a>
+                            <a asp-action="Delete" asp-route-id="@item.IdHistorial" class="btn btn-sm btn-danger">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

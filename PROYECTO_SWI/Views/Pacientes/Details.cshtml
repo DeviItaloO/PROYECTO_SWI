@@ -1,0 +1,47 @@
+﻿@model PROYECTO_SWI.Models.Paciente
+
+@{
+    ViewData["Title"] = "Detalles del Paciente";
+}
+
+<div class="container mt-4">
+    <h2 class="text-primary text-center">Detalles del Paciente</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card border-primary mb-3">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="card-title">Información del Paciente</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4 font-weight-bold">DNI:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Dni)</dd>
+
+                        <dt class="col-sm-4 font-weight-bold">Nombre:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Nombre)</dd>
+
+                        <dt class="col-sm-4 font-weight-bold">Apellido:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Apellido)</dd>
+
+                        <dt class="col-sm-4 font-weight-bold">Fecha de Nacimiento:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.FechaNacimiento)</dd>
+
+                        <dt class="col-sm-4 font-weight-bold">Alergias:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Alergias)</dd>
+
+                        <dt class="col-sm-4 font-weight-bold">Condiciones Preexistentes:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.CondicionesPreexistentes)</dd>
+
+                        <dt class="col-sm-4 font-weight-bold">Tipo de Paciente:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.IdTipo)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.IdPaciente" class="btn btn-warning btn-lg shadow-sm">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary btn-lg shadow-sm">Volver a la lista</a>
+    </div>
+</div>

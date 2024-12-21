@@ -1,0 +1,35 @@
+﻿@model PROYECTO_SWI.Login.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    ViewData["IsLoginPage"] = true;
+}
+<br />
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7 col-12">
+            <div class="card shadow-lg rounded-4 border-0">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">Proyecto</h2>
+                    <form method="post">
+                        <div class="form-group mb-3">
+                            <label for="Username" class="form-label">Usuario</label>
+                            <input type="text" id="Username" name="Username" class="form-control form-control-lg" placeholder="user" required />
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="Password" class="form-label">Contraseña</label>
+                            <input type="password" id="Password" name="Password" class="form-control form-control-lg" placeholder="pass" required />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 btn-lg py-2">Login</button>
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <p class="mb-0">¿No tienes una cuenta? <a href="/Account/Registrar" class="text-primary">Registrarse</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
